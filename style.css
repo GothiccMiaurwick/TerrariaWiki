@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --background-color: #f4e9dc;
+  --important-text-color: #7b5e57;
+  --font-color: #3a2e2b;
+  --decoration-color: #60976973;
+}
+
+@font-face {
+  font-family: "Poppins-regular";
+  src: url("public/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-italic";
+  src: url("public/fonts/Poppins/Poppins-SemiBoldItalic.ttf") format("truetype");
+}
+
+label,
+span {
+  user-select: none;
+}
+
+body {
+  background-color: #f4e9dc;
+  color: #3a2e2b;
+  font-family: "Poppins-regular";
+}
+
+/* NAVBAR  */
+
+.container-nav {
+  background-color: var(--decoration-color);
+  padding: 30px 0 30px 6px;
+}
+
+h1 {
+  display: flex;
+
+  font-family: "Poppins-italic";
+  justify-content: center;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.nav-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-bar__form {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.nav-bar--item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  border-radius: 2px;
+  padding: 5px 20px;
+  justify-content: center;
+}
+
+.nav-bar--item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-bar--item:hover {
+  background-color: var(--decoration-color);
+  color: var(--background-color);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.nav-bar__form {
+  position: relative;
+  z-index: 20;
+}
+
+.nav-bar__form .open-button {
+  display: none;
+}
+
+.container-nav label {
+  position: relative;
+  font-size: 2rem;
+  color: var(--important-text-color);
+}
+
+.close-button {
+  color: #3a2e2b;
+}
+
+.open-button {
+  display: flex;
+  position: absolute;
+  top: 0;
+}
+
+input[type="checkbox"]:checked ~ label {
+  filter: drop-shadow(0 0 0.5rem var(--background-color));
+}
+
+.container-nav:has(input[type="checkbox"]:checked)
+  .nav-bar__form
+  .close-button {
+  display: none;
+}
+
+.container-nav:has(input[type="checkbox"]:checked) .nav-bar__form .open-button {
+  display: block;
+  color: var(--font-color);
+}
+
+.container-nav:has(input[type="checkbox"]:checked) :is(.nav-bar--item a) {
+  display: none;
+}
+
+.container-nav:has(input[type="checkbox"]:not(:checked))
+  .nav-bar__side-container {
+  display: contents;
+}
+
+.container-nav:has(input[type="checkbox"]:checked) .nav-bar {
+  display: none;
+}
+
+/* CONTENT */
+
+.content-container {
+  outline: 1px dashed hotpink;
+}
+
+.content-container__title {
+  display: flex;
+  justify-content: center;
+  padding-top: .9rem;
+}
+
+.content-container__h5 {
+  display: flex;
+  justify-content: center;
+  padding-left: 1.2rem;
+}
+
+.content-container__h3 {
+  font-family: "Poppins-italic";
+  padding: 0.4rem;
+  color: var(--font-color);
+}
+
+.aside--p {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.aside-container__ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(4rem, 1fr));
+}
+
+.aside-ul--li_item {
+  display: flex;
+  padding: 0.5rem 0.4rem;
+  list-style: none;
+}
+
+.aside-ul--li_item a {
+  color: inherit;
+  text-decoration: none;
+  align-content: center;
+  padding-left: 0.9rem;
+}
+
+.container-news__title {
+  padding: 0.5rem 0.9rem;
+}
+
+.news-ul--item {
+  padding: 0.5rem 1rem;
+  list-style: circle;
+
+}
+
+.news-ul--item a::before {
+  content: "•";
+  color: var(--important-text-color);
+  font-size: 1.2rem;
+  display: inline-block;
+  width: 1rem;
+}
+
+
+.news-ul--item a {
+  text-decoration: none;
+  color: var(--important-text-color);
+  font-size: 1.2rem;
+  list-style: circle;
+}
+
+.news-ul--item a:hover {
+  text-decoration: underline;
+}
+
+.non-style a::before {
+  content: '';
+  color: var(--important-text-color);
+}
+
+.non-style a:hover {
+  text-decoration: underline;
+}
+
+.container-news__aside {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.container-news__aside--a {
+  display: flex;
+  padding: 0 .8rem;
+  list-style: none;
+}
+
+.container-news__aside--a a {
+  text-decoration: none;
+  font-size: clamp( 1rem, 1.1rem, 2rem);
+  color: var(--important-text-color);
+}
+
+.container-news__aside--a a:hover {
+  text-decoration: underline;
+}
+
+.container-news__aside--a span { 
+  display: flex;
+  align-items: center;
+  padding-right: 0.5rem;
+  color: var(--important-text-color);
+
+}
