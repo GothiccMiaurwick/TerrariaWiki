@@ -2,12 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --background-color: #f4e9dc;
+  --background-color: #f5d7d1;
   --background-secundary-color: #f5d7d1;
   --important-text-color: #7b5e57;
   --font-color: #3a2e2b;
   --font-secondary-color: #fff;
   --decoration-color: #60976973;
+  --decoration-color-secondary: #3a86ff;
 }
 
 @font-face {
@@ -26,34 +27,33 @@ span {
 }
 
 body {
-  background-color: #f4e9dc;
+  background-color: var(--background-secundary-color);
   color: #3a2e2b;
   font-family: "Poppins-regular";
 }
 
 /* NAVBAR  */
 
-.container-nav {
+.nav-bar {
   background-color: var(--decoration-color);
   padding: 30px 0 30px 6px;
 }
 
-h1 {
+.nav-bar__title {
   display: flex;
-
   font-family: "Poppins-italic";
   justify-content: center;
   padding: 10px;
   margin: 0 auto;
 }
 
-.nav-bar {
+.nav-bar__list {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.nav-bar ul {
+.nav-bar__list ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,7 +65,7 @@ h1 {
   overflow: hidden;
 }
 
-.nav-bar--item {
+.nav-bar__item {
   list-style: none;
   display: flex;
   align-items: center;
@@ -75,12 +75,12 @@ h1 {
   justify-content: center;
 }
 
-.nav-bar--item a {
+.nav-bar__item a {
   color: inherit;
   text-decoration: none;
 }
 
-.nav-bar--item:hover {
+.nav-bar__item:hover {
   background-color: var(--decoration-color);
   color: var(--background-color);
 }
@@ -94,11 +94,7 @@ input[type="checkbox"] {
   z-index: 20;
 }
 
-.nav-bar__form .open-button {
-  display: none;
-}
-
-.container-nav label {
+.nav-bar label {
   position: relative;
   font-size: 2rem;
   color: var(--important-text-color);
@@ -114,108 +110,112 @@ input[type="checkbox"] {
   top: 0;
 }
 
+.nav-bar__form .open-button {
+  display: none;
+}
+
 input[type="checkbox"]:checked ~ label {
   filter: drop-shadow(0 0 0.5rem var(--background-color));
 }
 
-.container-nav:has(input[type="checkbox"]:checked)
-  .nav-bar__form
-  .close-button {
+.nav-bar:has(input[type="checkbox"]:checked) .nav-bar__form .close-button {
   display: none;
 }
 
-.container-nav:has(input[type="checkbox"]:checked) .nav-bar__form .open-button {
+.nav-bar:has(input[type="checkbox"]:checked) .nav-bar__form .open-button {
   display: block;
   color: var(--font-color);
 }
 
-.container-nav:has(input[type="checkbox"]:checked) :is(.nav-bar--item a) {
+.nav-bar:has(input[type="checkbox"]:checked) :is(.nav-bar__item a) {
   display: none;
 }
 
-.container-nav:has(input[type="checkbox"]:not(:checked))
-  .nav-bar__side-container {
+.nav-bar:has(input[type="checkbox"]:not(:checked)) .nav-bar__dropdown {
   display: contents;
 }
 
-.container-nav:has(input[type="checkbox"]:checked) .nav-bar {
+.nav-bar:has(input[type="checkbox"]:checked) .nav-bar__list {
   display: none;
 }
 
 /* CONTENT */
 
-.content-container {
+.content__section {
   background-color: var(--background-secundary-color);
 }
 
-.content-container__title {
+.content__title {
   display: flex;
   justify-content: center;
   padding-top: 0.9rem;
 }
 
-
-.content-container__h5 {
+.content__subtitle {
   display: flex;
   justify-content: center;
   padding-left: 1.2rem;
   margin-bottom: 10px;
 }
 
-.main-heading {
+.section-heading {
   background: var(--background-secundary-color);
   border-right-color: var(--background-secundary-color);
   max-width: 600px;
 }
 
-.hgroup {
+.section-heading__tagline-group {
   background: var(--decoration-color);
   color: var(--background-secundary-color);
   display: flex;
-  align-items: stretch; 
+  align-items: stretch;
   height: 1.4em;
 }
 
-.content-container--text {
+.section-heading__tagline {
   font-family: "Poppins-italic";
   background-color: var(--background-secundary-color);
   color: var(--decoration-color);
   display: inline-flex;
   align-items: center;
-  height: 100%; 
-  padding: 0 0.3em; 
-  margin-left: 0.6em; 
-  box-sizing: border-box; 
+  height: 100%;
+  padding: 0 0.3em;
+  margin-left: 0.6em;
+  box-sizing: border-box;
   z-index: 20;
 }
 
-.rest {
-  flex: 1; 
+.section-heading__decor {
+  flex: 1;
 }
 
-.aside--p {
+.info-aside__description {
   display: flex;
   justify-content: center;
   padding: 1rem;
 }
 
-.aside-container__ul {
+.info-aside__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(auto-fit, minmax(4rem, 1fr));
 }
 
-.aside-ul--li_item {
+.info-aside__item {
   display: flex;
   padding: 0.5rem 1rem;
   list-style: none;
 }
 
-.aside-ul--li_item a {
+.info-aside__item a {
   color: inherit;
   text-decoration: none;
   align-content: center;
   padding-left: 0.9rem;
+}
+
+.info-aside__item a:hover {
+  text-decoration: underline;
 }
 
 /* CONTAINER NEWS */
@@ -228,12 +228,12 @@ input[type="checkbox"]:checked ~ label {
   font-size: 1.4rem;
 }
 
-.news-ul--item {
+.news__item {
   padding: 0.5rem 1rem;
   list-style: circle;
 }
 
-.news-ul--item a::before {
+.news__item a::before {
   content: "•";
   color: var(--important-text-color);
   font-size: 1.2rem;
@@ -241,51 +241,173 @@ input[type="checkbox"]:checked ~ label {
   width: 1rem;
 }
 
-.news-ul--item a {
+.news__item a {
   text-decoration: none;
   color: var(--important-text-color);
   font-size: 1.2rem;
   list-style: circle;
 }
 
-.news-ul--item a:hover {
+.news__item a:hover {
   text-decoration: underline;
 }
 
-.non-style a::before {
+.news__item--no-style a::before {
   content: "";
   color: var(--important-text-color);
 }
 
-.non-style a:hover {
+.news__item--no-style a:hover {
   text-decoration: underline;
 }
 
-.container-news__aside {
+.news__aside {
   display: flex;
   justify-content: center;
   padding: 3rem;
 }
 
-.container-news__aside--a {
+.news__aside-item {
   display: flex;
   padding: 0 0.8rem;
   list-style: none;
 }
 
-.container-news__aside--a a {
+.news__aside-item a {
   text-decoration: none;
   font-size: clamp(1rem, 1.1rem, 2rem);
   color: var(--important-text-color);
 }
 
-.container-news__aside--a a:hover {
+.news__aside-item a:hover {
   text-decoration: underline;
 }
 
-.container-news__aside--a span {
+.news__aside-item span {
   display: flex;
   align-items: center;
   padding-right: 0.5rem;
   color: var(--important-text-color);
+}
+
+/* ITEMS */
+
+.items__list-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.items__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 100dvh;
+  padding: 10px;
+  gap: 1rem;
+  list-style: none;
+}
+
+.items__list a {
+  text-decoration: none;
+  color: var(--important-text-color);
+}
+
+.items__list a:hover {
+  text-decoration: underline;
+}
+
+.items__list-item {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+/* NPCs */
+
+.items--border {
+  border: 2px solid var(--decoration-color);
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.items--border--hardmode {
+  border-top: 2px solid var(--decoration-color);
+}
+
+.items__subtitle {
+  padding: 0.5rem;
+}
+
+/* Software */
+
+.Software__tittle-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.Software__tittle a {
+  font-size: clamp(1.1rem, 1.1rem, 2.1rem);
+}
+
+.Software__tittle a:hover {
+  text-decoration: underline;
+}
+
+/* Wiki Community */
+
+.wiki-community__text a {
+  color: var(--important-text-color);
+  font-size: clamp(1.3rem, 1.2rem, 2.2rem);
+  margin-top: 0.2rem;
+  margin-left: 0.9rem;
+}
+
+.wiki-community__text a:hover {
+  text-decoration: underline;
+}
+
+.wiki-community__text p {
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+  font-size: clamp(1.1rem, 1.1rem, 2.1rem);
+}
+
+/* Footer */
+
+.footer {
+  background-color: var(--decoration-color);
+  height: 50dvh;
+}
+
+.footer h4 {
+  display: flex;
+  justify-content: center;
+  font-size: clamp(1.1rem, 1.1rem, 2.1rem);
+  padding-top: 2rem;
+}
+
+.footer__hr {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  height: 3px;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 2px;
+  background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--decoration-color-secondary);
+}
+
+.footer a:hover {
+  color: var(--font-color);
 }
