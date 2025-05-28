@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-wrap: break-word;
   --background-color: #f5d7d1;
   --background-secundary-color: #f5d7d1;
   --important-text-color: #7b5e57;
@@ -45,6 +46,7 @@ body {
   justify-content: center;
   padding: 10px;
   margin: 0 auto;
+  font-size: clamp(1rem, 100%, 2rem);
 }
 
 .nav-bar__list {
@@ -156,12 +158,12 @@ input[type="checkbox"]:checked ~ label {
   justify-content: center;
   padding-left: 1.2rem;
   margin-bottom: 10px;
+  font-size: clamp(1rem, 0.9rem, 2rem);
 }
 
 .section-heading {
   background: var(--background-secundary-color);
   border-right-color: var(--background-secundary-color);
-  max-width: 600px;
 }
 
 .section-heading__tagline-group {
@@ -183,6 +185,7 @@ input[type="checkbox"]:checked ~ label {
   margin-left: 0.6em;
   box-sizing: border-box;
   z-index: 20;
+  font-size: clamp(1.2rem, 1rem, 2.1rem);
 }
 
 .section-heading__decor {
@@ -193,6 +196,7 @@ input[type="checkbox"]:checked ~ label {
   display: flex;
   justify-content: center;
   padding: 1rem;
+  font-size: clamp(1rem, 1.1rem, 2.1rem);
 }
 
 .info-aside__list {
@@ -294,7 +298,6 @@ input[type="checkbox"]:checked ~ label {
 
 .items__list-wrapper {
   display: flex;
-  width: 100%;
 }
 
 .items__list {
@@ -320,6 +323,7 @@ input[type="checkbox"]:checked ~ label {
   display: flex;
   list-style: none;
   gap: 0.5rem;
+  font-size: clamp(1.2rem, 1rem, 2rem);
 }
 
 /* NPCs */
@@ -410,4 +414,173 @@ input[type="checkbox"]:checked ~ label {
 
 .footer a:hover {
   color: var(--font-color);
+}
+
+@media screen and (min-width: 600px) {
+  /* content responsive */
+
+  .info-aside__item a {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  /* Items responsive */
+
+  .items__list-item {
+    width: fit-content;
+    font-size: clamp(1.3rem, 1rem, 2rem);
+  }
+
+  .items__list-item a {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* Footer responsive */
+  .footer {
+    height: 25dvh;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  /* Navbar responsive */
+  .nav-bar__title {
+    font-size: clamp(2rem, 100%, 2.2rem);
+  }
+
+  .nav-bar__list ul  {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10rem;
+  }
+
+  .nav-bar__list a {
+    font-size: clamp(1rem, 1.5rem, 2rem);
+  }
+
+  .nav-bar__dropdown,
+  .nav-bar__form {
+    display: none;
+  }
+
+  /* Content responsive */
+
+  .content__title {
+    font-size: clamp(1.9rem, 100%, 2.2rem);
+  }
+
+  .content__subtitle {
+    font-size: clamp(1.5rem, 100%, 2.2rem);
+  }
+
+  .section-heading__tagline-group {
+    height: 2.3rem;
+  }
+
+  .section-heading__tagline {
+    font-size: clamp(1.8rem, 100%, 2.2rem);
+  }
+
+  .info-aside__description {
+    font-size: clamp(1.4rem, 1.1rem, 2.2rem);
+  }
+
+  .info-aside__item img {
+    width: clamp(6.2rem, 1.2rem, 2.2rem);
+  }
+
+  .info-aside__item a {
+    font-size: clamp(1.7rem, 1.1rem, 2.2rem);
+  }
+
+  /* News responsive */
+
+  .news__list a {
+    font-size: clamp(1rem, 1.7rem, 2.2rem);
+  }
+
+  .news__aside-item {
+    margin-left: 2rem;
+  }
+
+  .news__aside-item a {
+    font-size: clamp(1.8rem, 1.1rem, 2.2rem);
+  }
+
+  /* Items responsive */
+
+  .items__list-wrapper {
+    width: 100%;
+  }
+
+  .items__list-item img {
+    width: 2rem;
+  }
+
+  .items__list-item--img   { 
+    width: .9rem !important;
+  }
+
+  .items__list {
+    width: 100%;
+  }
+
+  .items__list-item a {
+    font-size: clamp(1rem, 1.7rem, 2rem);
+    margin-left: 20rem;
+  }
+
+  /* Mechanic responsive */
+
+  .items__list-item--mana {
+    margin-left: .1rem !important;
+  }
+
+  .items__list-item--death {
+    margin-left: .1rem !important;
+  }
+
+  /* Software responsive */
+
+  .Software__tittle {
+    font-size: clamp(1rem, 1.5rem, 2rem);
+  }
+
+
+  .Software__tittle b a{
+    font-size: clamp(1rem, 1.5rem, 2rem);
+  }
+
+  /* Wiki Community responsive */
+
+  .wiki-community__text a {
+    font-size: clamp(1rem, 1.8rem, 2.2rem);
+  }
+
+  .wiki-community__text p {
+    font-size: clamp(1rem, 1.6rem, 2.2rem);
+  }
+
+  /* Subtitle dificult game responsive */
+
+  .items__subtitle {
+    font-size: clamp(1rem, 1.7rem, 2.2rem);
+  }
+
+  /* Footer responsive */
+
+  .footer {
+    height: 20dvh;
+  }
+
+  .footer h4{
+    font-size: clamp(1rem, 1.7rem, 2.2rem);
+  }
+
+  .footer a {
+    font-size: clamp(1rem, 1.7rem, 2.2rem);
+  }
 }
