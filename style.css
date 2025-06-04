@@ -435,6 +435,7 @@ input[type="checkbox"]:checked ~ label {
     grid-template-columns: 1fr;
   }
 
+
   .footer {
     height: 30dvh;
   }
@@ -446,10 +447,42 @@ input[type="checkbox"]:checked ~ label {
   }
 }
 
-@media (max-width: 414px) {
-}
+@media (min-width: 414px) {
+  .info-aside__list {
+    grid-template-columns: 1fr 1fr;
+  }
 
-@media (max-width: 480px) {
+    .news__list a {
+    font-size: clamp(0.2rem, 1rem, 2rem);
+  }
+
+  .news__aside-item a {
+    font-size: clamp(0.2rem, 1.1rem, 2rem);
+  }
+
+  .items__list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .items__list-item a {
+    font-size: clamp(.2rem, 1rem, 2rem);
+  }
+
+  .Software__tittle a, b {
+    font-size: clamp(0.2rem, .9rem, 2rem);
+  }
+
+  .Software__tittle p {
+    font-size: clamp(0.2rem, .8rem, 2rem);
+  }
+
+  .wiki-community__text a {
+    font-size: clamp(0.2rem, 1rem, 2rem);
+  }
+
+  .wiki-community__text p {
+    font-size: clamp(0.2rem, .9rem, 2rem);
+  }
 }
 
 @media screen and (min-width: 600px) {
