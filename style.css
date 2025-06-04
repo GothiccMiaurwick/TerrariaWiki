@@ -640,10 +640,6 @@ input[type="checkbox"]:checked ~ label {
 
   /* Footer responsive */
 
-  .footer {
-    height: 20dvh;
-  }
-
   .footer h4 {
     font-size: clamp(1rem, 1.7rem, 2.2rem);
   }
