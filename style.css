@@ -436,7 +436,7 @@ input[type="checkbox"]:checked ~ label {
   }
 
   .footer {
-    height: 15dvh;
+    height: 25dvh;
   }
 
   .footer h4,
