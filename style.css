@@ -435,9 +435,8 @@ input[type="checkbox"]:checked ~ label {
     grid-template-columns: 1fr;
   }
 
-
   .footer {
-    height: 30dvh;
+    height: 15dvh;
   }
 
   .footer h4,
